@@ -11,7 +11,7 @@ describe("root when using solution option", function()
 
   async.it("should return .sln dir when it exists and path contains it", function()
     local plugin = require("neotest-dotnet")
-    local dir = "./tests/sln_dir"
+    local dir = "./tests/solution_dir"
     local root = plugin.root(dir)
 
     assert.equal(dir, root)
@@ -35,8 +35,8 @@ describe("root when using solution option", function()
 
   async.it("should return .sln dir when parent dir contains .sln file", function()
     local plugin = require("neotest-dotnet")
-    local dir = "./tests/sln_dir/project1/tests"
-    local parent_sln_dir = "/tests/sln_dir"
+    local dir = "./tests/solution_dir/project1/tests"
+    local parent_sln_dir = "/tests/solution_dir"
     local root = plugin.root(dir)
 
     -- Check the end of the root matches the test dir as the function
@@ -75,7 +75,7 @@ describe("root when using project option", function()
 
   async.it("should return nil when neither path nor parents contain .csproj file", function()
     local plugin = require("neotest-dotnet")
-    local dir = "./tests/sln_dir"
+    local dir = "./tests/solution_dir"
     local root = plugin.root(dir)
 
     assert.equal(nil, root)
