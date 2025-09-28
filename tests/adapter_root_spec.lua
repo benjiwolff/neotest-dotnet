@@ -44,7 +44,7 @@ describe("root when using solution option", function()
     assert.is.True(string.find(root, parent_sln_dir .. "$") ~= nil)
   end)
 
-  async.it("should return .slnx dir when parent dir contains .sln file", function()
+  async.it("should return .slnx dir when parent dir contains .slnx file", function()
     local plugin = require("neotest-dotnet")
     local dir = "./tests/slnx_dir/project1/tests"
     local parent_sln_dir = "/tests/slnx_dir"
